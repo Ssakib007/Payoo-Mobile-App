@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Page title -->
+    <title>Cashout</title>
+    <!-- Page icon -->
+    <link rel="shortcut icon" href="assets/payoo.png" type="image/x-icon" />
+    <!-- daisyUI cnd -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- tailwind cdn -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- google font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/f9b49555d4.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- css -->
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body class="bg-gray-100 w-[450px] h-[1189px] outfit-font mx-auto">
+    <!-- navbar section -->
+    <div
+      class="navbar bg-white flex justify-between items-center py-5 px-6 border-b-1 border-gray-200"
+    >
+      <div class="navbar-left flex items-center">
+        <img src="./assets/Group.png" class="w-12 h-12" />
+        <div class="ml-3">
+          <p class="text-zinc-950/90 text-lg font-extrabold">
+            $ <span id="available-balance">45000</span>
+          </p>
+          <p class="text-zinc-950/50 text-sm font-normal">Available Balance</p>
+        </div>
+      </div>
+      <div class="navbar-right">
+        <button
+          class="btn w-24 h-9 px-3 py-2 rounded-lg outline outline-1 outline-offset-[-1px] outline-zinc-950/10 text-zinc-950/50 text-sm font-normal"
+        >
+          <i class="fa-solid fa-arrow-right-from-bracket rotate-180"></i>
+          Log Out
+        </button>
+      </div>
+    </div>
+    <!-- wellcome section -->
+    <div class="pt-8 mx-auto px-6 space-y-3 bg-white">
+      <p class="text-zinc-950 text-2xl font-bold">🔥 Welcome to Payooo!</p>
+      <p class="text-zinc-950/50 text-base font-normal">
+        Enjoy easy and convenient financial services with us. <br />
+        Cashout charge is low and
+      </p>
+    </div>
+    <!-- card section  -->
+    <div class="card-holder bg-white rounded-b-3xl grid grid-cols-3 p-6 gap-4">
+      <div
+        class="btn flex flex-col h-[100px] card-1 w-32 px-2.5 py-5 bg-white rounded-xl outline outline-0 outline-offset-[-1px] outline-zinc-950/10"
+      >
+        <img src="./assets/wallet1.png" class="mx-auto" />
+        <p class="text-center text-zinc-950/70 text-sm font-normal">
+          Add Money
+        </p>
+      </div>
+      <div
+        class="btn flex flex-col h-[100px] card-2 w-32 px-2.5 py-5 bg-blue-600/5 rounded-xl outline outline-1 outline-offset-[-1px] outline-blue-600"
+      >
+        <img src="./assets/send1.png" class="mx-auto" />
+        <p class="text-center text-blue-600 text-sm font-semibold">Cashout</p>
+      </div>
+      <div
+        class="btn flex flex-col h-[100px] card-3 w-32 px-2.5 py-5 bg-white rounded-xl outline outline-0 outline-offset-[-1px] outline-zinc-950/10"
+      >
+        <img src="./assets/money1.png" class="mx-auto" />
+        <p class="text-center text-zinc-950/70 text-sm font-normal">
+          Transfer Money
+        </p>
+      </div>
+      <div
+        class="btn flex flex-col h-[100px] card-4 w-32 px-2.5 py-5 bg-white rounded-xl outline outline-0 outline-offset-[-1px] outline-zinc-950/10"
+      >
+        <img src="./assets/bonus1.png" class="mx-auto" />
+        <p class="text-center text-zinc-950/70 text-sm font-normal">
+          Get Bonus
+        </p>
+      </div>
+      <div
+        class="btn flex flex-col h-[100px] card-5 w-32 px-2.5 py-5 bg-white rounded-xl outline outline-0 outline-offset-[-1px] outline-zinc-950/10"
+      >
+        <img src="./assets/purse1.png" class="mx-auto" />
+        <p class="text-center text-zinc-950/70 text-sm font-normal">Pay Bill</p>
+      </div>
+      <div
+        class="btn flex flex-col h-[100px] card-6 w-32 px-2.5 py-5 bg-white rounded-xl outline outline-0 outline-offset-[-1px] outline-zinc-950/10"
+      >
+        <img src="./assets/transaction1.png" class="mx-auto" />
+        <p class="text-center text-zinc-950/70 text-sm font-normal">
+          Transactions
+        </p>
+      </div>
+    </div>
+    <!-- Add money -->
+    <div class="p-6 ml-2">
+      <p class="text-zinc-950 text-lg font-semibold">Cash Out</p>
+    </div>
+    <form class="p-6 mx-auto bg-white rounded-3xl w-[402px]">
+      <p class="text-zinc-950/70 text-base font-medium my-3">Agent Number</p>
+      <input
+        type="text"
+        id="add-account-number"
+        placeholder="Enter 11 digit number"
+        class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
+      />
+      <p class="text-zinc-950/70 text-base font-medium my-3">Amount</p>
+      <input
+        type="text"
+        id="add-amount"
+        placeholder="Enter Amount to withdraw"
+        class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
+      />
+      <p class="text-zinc-950/70 text-base font-medium my-3">Pin Number</p>
+      <input
+        type="text"
+        id="add-pin-number"
+        placeholder="Enter 4 Digit Pin number"
+        class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
+      />
+      <button
+        id="add-money-btn"
+        class="btn w-full px-5 py-6 bg-blue-600 rounded-[32px] text-white text-xl font-semibold hover:bg-blue-950 mt-4"
+      >
+        Withdraw Money
+      </button>
+    </form>
+    <!-- JS scripts -->
+  </body>
+</html>

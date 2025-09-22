@@ -15,11 +15,11 @@ document.getElementById("login-btn").addEventListener("click", function (e) {
   console.log(mobileNumberValueConverted, pinNumberValueConverted);
 
   // comparing function
- if (
+  if (
     mobileNumberValueConverted === mobileNumber &&
     pinNumberValueConverted === pinNumber
   ) {
-    window.location.href = "./home.html";
+    window.location.href = "./addMoney.html";
   } else {
     alert("Invalied Credentials");
   }

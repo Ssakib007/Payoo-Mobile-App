@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Homepage</title>
+    <!-- Page title -->
+    <title>Add Money</title>
     <!-- Page icon -->
     <link rel="shortcut icon" href="assets/payoo.png" type="image/x-icon" />
     <!-- daisyUI cnd -->
@@ -64,10 +65,12 @@
     <!-- card section  -->
     <div class="card-holder bg-white rounded-b-3xl grid grid-cols-3 p-6 gap-4">
       <div
-        class="btn flex flex-col h-[100px] card-1 w-32 px-2.5 py-5 bg-white rounded-xl outline outline-0 outline-offset-[-1px] outline-zinc-950/10"
+        class="btn flex flex-col h-[100px] card-1 w-32 px-2.5 py-5 bg-blue-600/5 rounded-xl outline outline-1 outline-offset-[-1px] outline-blue-600"
       >
         <img src="./assets/wallet1.png" class="mx-auto" />
-        <p class="text-center text-zinc-950/70 text-sm font-normal">
+        <p
+          class="text-center text-blue-600 text-sm font-semibold text-sm font-normal"
+        >
           Add Money
         </p>
       </div>
@@ -115,7 +118,7 @@
     <form class="p-6 mx-auto bg-white rounded-3xl w-[402px]">
       <p class="text-zinc-950/70 text-base font-medium mb-3">Select A Bank</p>
       <select
-        class="select px-5 bg-gray-200 rounded-[32px] border-none w-full text-zinc-950 text-base font-light opacity-40 hover:bg-gray-500 hover:text-white"
+        class="select px-5 bg-gray-200 rounded-[32px] border-none w-full text-zinc-950 text-base font-light hover:bg-gray-300 hover:text-gray-900 opacity-60"
         id="add-bank-name"
       >
         <option disabled selected>Select Bank</option>
@@ -136,14 +139,14 @@
       <input
         type="text"
         id="add-amount"
-        placeholder="Add Amount to withdraw"
+        placeholder="Enter amount to add"
         class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
       />
       <p class="text-zinc-950/70 text-base font-medium my-3">Pin Number</p>
       <input
         type="text"
         id="add-pin-number"
-        placeholder="Enter 4 Digit Pin"
+        placeholder="Enter 4 Digit Pin number"
         class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
       />
       <button
@@ -154,6 +157,6 @@
       </button>
     </form>
     <!-- JS scripts -->
-    <script src="./home.js"></script>
+    <script src="JS/addMoney.js"></script>
   </body>
 </html>
