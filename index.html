@@ -27,19 +27,19 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <!-- body starts here -->
-  <body class="flex justify-center items-center mx-auto">
+  <body class="flex justify-center items-center mx-auto w-140 h-[1189px]">
     <!-- login page -->
     <section
-      class="w-120 h-[960px] bg-gray-100 flex flex-col justify-center items-center outfit-font"
+      class="w-full h-full bg-gray-100 flex flex-col justify-center items-center outfit-font mx-auto"
     >
-    <!-- login image -->
+      <!-- login image -->
       <div
-        class="bg-[url(assets/bg.png)] h-[130px] w-[300px] bg-cover flex justify-center items-center"
+        class="bg-[url(assets/bg.png)] h-[130px] w-[380px] bg-cover flex justify-center items-center"
       >
         <img src="assets/Group.png" alt="" />
       </div>
       <!-- login form -->
-      <form class="p-8 w-[338px] bg-white rounded-3xl mx-6">
+      <form class="p-8 bg-white rounded-3xl mx-6 w-[430px]">
         <div class="flex flex-col space-y-3 pb-4">
           <label>Mobile Number</label>
 
@@ -47,7 +47,7 @@
             type="text"
             id="mobile-number"
             placeholder="Enter your number"
-            class="input px-5 py-4 bg-gray-100 rounded-[32px] border-none hover:bg-gray-500 hover:text-white focus:outline-none"
+            class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-500 hover:text-white focus:outline-none w-full"
           />
         </div>
         <div class="flex flex-col space-y-3 pb-4">
@@ -57,12 +57,12 @@
             type="text"
             id="pin-number"
             placeholder="Enter 4 Digit Pin"
-            class="input px-5 py-4 bg-gray-100 rounded-[32px] border-none hover:bg-gray-500 hover:text-white focus:outline-none"
+            class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-500 hover:text-white focus:outline-none w-full"
           />
         </div>
         <button
           id="login-btn"
-          class="w-full px-5 py-3.5 bg-blue-600 rounded-[32px] text-white text-xl font-semibold hover:bg-blue-950"
+          class="btn w-full px-5 py-6 bg-blue-600 rounded-[32px] text-white text-xl font-semibold hover:bg-blue-950"
         >
           Login
         </button>
