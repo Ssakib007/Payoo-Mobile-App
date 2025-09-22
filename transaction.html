@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Page title -->
-    <title>Add Money</title>
+    <title>Transactions</title>
     <!-- Page icon -->
     <link rel="shortcut icon" href="assets/payoo.png" type="image/x-icon" />
     <!-- daisyUI cnd -->
@@ -65,10 +65,12 @@
     <!-- card section  -->
     <div class="card-holder bg-white rounded-b-3xl grid grid-cols-3 p-6 gap-4">
       <div
-        class="btn flex flex-col h-[100px] card-1 w-32 px-2.5 py-5 bg-blue-600/5 rounded-xl outline outline-1 outline-offset-[-1px] outline-blue-600"
+        class="btn flex flex-col h-[100px] card-1 w-32 px-2.5 py-5 bg-white rounded-xl outline outline-0 outline-offset-[-1px] outline-zinc-950/10"
       >
         <img src="./assets/wallet1.png" class="mx-auto" />
-        <p class="text-center text-blue-600 text-sm font-semibold">Add Money</p>
+        <p class="text-center text-zinc-950/70 text-sm font-normal">
+          Add Money
+        </p>
       </div>
       <div
         class="btn flex flex-col h-[100px] card-2 w-32 px-2.5 py-5 bg-white rounded-xl outline outline-0 outline-offset-[-1px] outline-zinc-950/10"
@@ -99,60 +101,19 @@
         <p class="text-center text-zinc-950/70 text-sm font-normal">Pay Bill</p>
       </div>
       <div
-        class="btn flex flex-col h-[100px] card-6 w-32 px-2.5 py-5 bg-white rounded-xl outline outline-0 outline-offset-[-1px] outline-zinc-950/10"
+        class="btn flex flex-col h-[100px] card-6 w-32 px-2.5 py-5 bg-blue-600/5 rounded-xl outline outline-1 outline-offset-[-1px] outline-blue-600"
       >
         <img src="./assets/transaction1.png" class="mx-auto" />
-        <p class="text-center text-zinc-950/70 text-sm font-normal">
+        <p class="text-center text-blue-600 text-sm font-semibold">
           Transactions
         </p>
       </div>
     </div>
-    <!-- Add money -->
+    <!-- Transaction -->
     <div class="p-6 ml-2">
-      <p class="text-zinc-950 text-lg font-semibold">Add Money</p>
+      <p class="text-zinc-950 text-lg font-semibold">Transaction History</p>
     </div>
-    <form class="p-6 mx-auto bg-white rounded-3xl w-[402px]">
-      <p class="text-zinc-950/70 text-base font-medium mb-3">Select A Bank</p>
-      <select
-        class="select px-5 bg-gray-200 rounded-[32px] border-none w-full text-zinc-950 text-base font-light hover:bg-gray-300 hover:text-gray-900 opacity-60"
-        id="add-bank-name"
-      >
-        <option disabled selected>Select Bank</option>
-        <option>Brac Bank</option>
-        <option>Dutch Bangla Bank</option>
-        <option>United Commercial Bank</option>
-      </select>
-      <p class="text-zinc-950/70 text-base font-medium my-3">
-        Bank Account Number
-      </p>
-      <input
-        type="text"
-        id="add-account-number"
-        placeholder="Enter 11 digit account number"
-        class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
-      />
-      <p class="text-zinc-950/70 text-base font-medium my-3">Amount to Add</p>
-      <input
-        type="text"
-        id="add-amount"
-        placeholder="Enter amount to add"
-        class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
-      />
-      <p class="text-zinc-950/70 text-base font-medium my-3">Pin Number</p>
-      <input
-        type="text"
-        id="add-pin-number"
-        placeholder="Enter 4 Digit Pin number"
-        class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
-      />
-      <button
-        id="add-money-btn"
-        class="btn w-full px-5 py-6 bg-blue-600 rounded-[32px] text-white text-xl font-semibold hover:bg-blue-950 mt-4"
-      >
-        Add Money
-      </button>
-    </form>
+
     <!-- JS scripts -->
-    <script src="JS/addMoney.js"></script>
   </body>
 </html>
