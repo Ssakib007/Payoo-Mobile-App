@@ -66,18 +66,21 @@
     <div class="card-holder bg-white rounded-b-3xl grid grid-cols-3 p-6 gap-4">
       <div
         class="btn flex flex-col h-[100px] card-1 w-32 px-2.5 py-5 bg-blue-600/5 rounded-xl outline outline-1 outline-offset-[-1px] outline-blue-600"
+        id="add-money-card"
       >
         <img src="./assets/wallet1.png" class="mx-auto" />
         <p class="text-center text-blue-600 text-sm font-semibold">Add Money</p>
       </div>
       <div
         class="btn flex flex-col h-[100px] card-2 w-32 px-2.5 py-5 bg-white rounded-xl outline outline-0 outline-offset-[-1px] outline-zinc-950/10"
+        id="cashout-card"
       >
         <img src="./assets/send1.png" class="mx-auto" />
         <p class="text-center text-zinc-950/70 text-sm font-normal">Cashout</p>
       </div>
       <div
         class="btn flex flex-col h-[100px] card-3 w-32 px-2.5 py-5 bg-white rounded-xl outline outline-0 outline-offset-[-1px] outline-zinc-950/10"
+        id="transfer-money-card"
       >
         <img src="./assets/money1.png" class="mx-auto" />
         <p class="text-center text-zinc-950/70 text-sm font-normal">
@@ -86,6 +89,7 @@
       </div>
       <div
         class="btn flex flex-col h-[100px] card-4 w-32 px-2.5 py-5 bg-white rounded-xl outline outline-0 outline-offset-[-1px] outline-zinc-950/10"
+        id="get-bonus-card"
       >
         <img src="./assets/bonus1.png" class="mx-auto" />
         <p class="text-center text-zinc-950/70 text-sm font-normal">
@@ -94,12 +98,14 @@
       </div>
       <div
         class="btn flex flex-col h-[100px] card-5 w-32 px-2.5 py-5 bg-white rounded-xl outline outline-0 outline-offset-[-1px] outline-zinc-950/10"
+        id="pay-bill-card"
       >
         <img src="./assets/purse1.png" class="mx-auto" />
         <p class="text-center text-zinc-950/70 text-sm font-normal">Pay Bill</p>
       </div>
       <div
         class="btn flex flex-col h-[100px] card-6 w-32 px-2.5 py-5 bg-white rounded-xl outline outline-0 outline-offset-[-1px] outline-zinc-950/10"
+        id="transactions-card"
       >
         <img src="./assets/transaction1.png" class="mx-auto" />
         <p class="text-center text-zinc-950/70 text-sm font-normal">
@@ -107,51 +113,216 @@
         </p>
       </div>
     </div>
-    <!-- Add money -->
-    <div class="p-6 ml-2">
-      <p class="text-zinc-950 text-lg font-semibold">Add Money</p>
+    <!-- all form section -->
+    <div class="all-form-section">
+      <!-- Add money -->
+      <div id="add-money-form" class="hidden">
+        <div class="p-6 ml-2">
+          <p class="text-zinc-950 text-lg font-semibold">Add Money</p>
+        </div>
+        <form class="p-6 mx-auto bg-white rounded-3xl w-[402px]">
+          <p class="text-zinc-950/70 text-base font-medium mb-3">
+            Select A Bank
+          </p>
+          <select
+            class="select px-5 bg-gray-200 rounded-[32px] border-none w-full text-zinc-950 text-base font-light hover:bg-gray-300 hover:text-gray-900 opacity-60"
+            id="add-bank-name"
+          >
+            <option disabled selected>Select Bank</option>
+            <option>Brac Bank</option>
+            <option>Dutch Bangla Bank</option>
+            <option>United Commercial Bank</option>
+          </select>
+          <p class="text-zinc-950/70 text-base font-medium my-3">
+            Bank Account Number
+          </p>
+          <input
+            type="text"
+            id="add-account-number"
+            placeholder="Enter 11 digit account number"
+            class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
+          />
+          <p class="text-zinc-950/70 text-base font-medium my-3">
+            Amount to Add
+          </p>
+          <input
+            type="text"
+            id="add-amount"
+            placeholder="Enter amount to add"
+            class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
+          />
+          <p class="text-zinc-950/70 text-base font-medium my-3">Pin Number</p>
+          <input
+            type="text"
+            id="add-pin-number"
+            placeholder="Enter 4 Digit Pin number"
+            class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
+          />
+          <button
+            id="add-money-btn"
+            class="btn w-full px-5 py-6 bg-blue-600 rounded-[32px] text-white text-xl font-semibold hover:bg-blue-950 mt-4"
+          >
+            Add Money
+          </button>
+        </form>
+      </div>
+      <!-- cashout -->
+      <div id="cashout-form" class="hidden">
+        <div class="p-6 ml-2">
+          <p class="text-zinc-950 text-lg font-semibold">Cash Out</p>
+        </div>
+        <form class="p-6 mx-auto bg-white rounded-3xl w-[402px]">
+          <p class="text-zinc-950/70 text-base font-medium my-3">
+            Agent Number
+          </p>
+          <input
+            type="text"
+            id="agent-number"
+            placeholder="Enter 11 digit number"
+            class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
+          />
+          <p class="text-zinc-950/70 text-base font-medium my-3">Amount</p>
+          <input
+            type="text"
+            id="withdraw-amount"
+            placeholder="Enter Amount to withdraw"
+            class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
+          />
+          <p class="text-zinc-950/70 text-base font-medium my-3">Pin Number</p>
+          <input
+            type="text"
+            id=""
+            placeholder="Enter 4 Digit Pin number"
+            class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
+          />
+          <button
+            id="withdraw-btn"
+            class="btn w-full px-5 py-6 bg-blue-600 rounded-[32px] text-white text-xl font-semibold hover:bg-blue-950 mt-4"
+          >
+            Withdraw Money
+          </button>
+        </form>
+      </div>
+      <!-- transfer money -->
+      <div id="transfer-money-form" class="hidden">
+        <div class="p-6 ml-2">
+          <p class="text-zinc-950 text-lg font-semibold">Transfer Money</p>
+        </div>
+        <form class="p-6 mx-auto bg-white rounded-3xl w-[402px]">
+          <p class="text-zinc-950/70 text-base font-medium my-3">
+            User Account Number
+          </p>
+          <input
+            type="text"
+            id=""
+            placeholder="Enter 11 digit account number"
+            class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
+          />
+          <p class="text-zinc-950/70 text-base font-medium my-3">Amount</p>
+          <input
+            type="text"
+            id=""
+            placeholder="Enter amount to transfer"
+            class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
+          />
+          <p class="text-zinc-950/70 text-base font-medium my-3">Pin Number</p>
+          <input
+            type="text"
+            id=""
+            placeholder="Enter 4 Digit Pin number"
+            class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
+          />
+          <button
+            id=""
+            class="btn w-full px-5 py-6 bg-blue-600 rounded-[32px] text-white text-xl font-semibold hover:bg-blue-950 mt-4"
+          >
+            Send Now
+          </button>
+        </form>
+      </div>
+      <!-- get bonus -->
+      <div id="get-bonus-form" class="hidden">
+        <div class="p-6 ml-2">
+          <p class="text-zinc-950 text-lg font-semibold">Get Bonus</p>
+        </div>
+        <form class="p-6 mx-auto bg-white rounded-3xl w-[402px]">
+          <p class="text-zinc-950/70 text-base font-medium my-3">
+            Enter Bonus Coupon
+          </p>
+          <input
+            type="text"
+            id=""
+            placeholder="Enter your coupon"
+            class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
+          />
+          <button
+            id=""
+            class="btn w-full px-5 py-6 bg-blue-600 rounded-[32px] text-white text-xl font-semibold hover:bg-blue-950 mt-4"
+          >
+            Get Bonus
+          </button>
+        </form>
+      </div>
+      <!-- pay bill -->
+      <div id="pay-bill-form" class="hidden">
+        <div class="p-6 ml-2">
+          <p class="text-zinc-950 text-lg font-semibold">Pay Bill</p>
+        </div>
+        <form class="p-6 mx-auto bg-white rounded-3xl w-[402px]">
+          <p class="text-zinc-950/70 text-base font-medium mb-3">
+            Select To Pay
+          </p>
+          <select
+            class="select px-5 bg-gray-200 rounded-[32px] border-none w-full text-zinc-950 text-base font-light hover:bg-gray-300 hover:text-gray-900 opacity-60"
+            id="add-bank-name"
+          >
+            <option disabled selected>Select Bill</option>
+            <option>DESCO</option>
+            <option>Dhaka Wasa</option>
+            <option>Titas Gas</option>
+            <option>DOT Internet</option>
+          </select>
+          <p class="text-zinc-950/70 text-base font-medium my-3">
+            Biller Account Number
+          </p>
+          <input
+            type="text"
+            id=""
+            placeholder="Enter account number"
+            class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
+          />
+          <p class="text-zinc-950/70 text-base font-medium my-3">
+            Amount to pay
+          </p>
+          <input
+            type="text"
+            id=""
+            placeholder="Add amount to pay"
+            class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
+          />
+          <p class="text-zinc-950/70 text-base font-medium my-3">Pin Number</p>
+          <input
+            type="text"
+            id=""
+            placeholder="Enter 4 Digit Pin number"
+            class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
+          />
+          <button
+            id=""
+            class="btn w-full px-5 py-6 bg-blue-600 rounded-[32px] text-white text-xl font-semibold hover:bg-blue-950 mt-4"
+          >
+            Pay Now
+          </button>
+        </form>
+      </div>
+      <!-- transactions -->
+      <div id="transactions-list" class="hidden">
+        <div class="p-6 ml-2">
+          <p class="text-zinc-950 text-lg font-semibold">Transaction History</p>
+        </div>
+      </div>
     </div>
-    <form class="p-6 mx-auto bg-white rounded-3xl w-[402px]">
-      <p class="text-zinc-950/70 text-base font-medium mb-3">Select A Bank</p>
-      <select
-        class="select px-5 bg-gray-200 rounded-[32px] border-none w-full text-zinc-950 text-base font-light hover:bg-gray-300 hover:text-gray-900 opacity-60"
-        id="add-bank-name"
-      >
-        <option disabled selected>Select Bank</option>
-        <option>Brac Bank</option>
-        <option>Dutch Bangla Bank</option>
-        <option>United Commercial Bank</option>
-      </select>
-      <p class="text-zinc-950/70 text-base font-medium my-3">
-        Bank Account Number
-      </p>
-      <input
-        type="text"
-        id="add-account-number"
-        placeholder="Enter 11 digit account number"
-        class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
-      />
-      <p class="text-zinc-950/70 text-base font-medium my-3">Amount to Add</p>
-      <input
-        type="text"
-        id="add-amount"
-        placeholder="Enter amount to add"
-        class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
-      />
-      <p class="text-zinc-950/70 text-base font-medium my-3">Pin Number</p>
-      <input
-        type="text"
-        id="add-pin-number"
-        placeholder="Enter 4 Digit Pin number"
-        class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
-      />
-      <button
-        id="add-money-btn"
-        class="btn w-full px-5 py-6 bg-blue-600 rounded-[32px] text-white text-xl font-semibold hover:bg-blue-950 mt-4"
-      >
-        Add Money
-      </button>
-    </form>
+
     <!-- JS scripts -->
     <script src="JS/addMoney.js"></script>
   </body>
