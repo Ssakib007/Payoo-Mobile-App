@@ -30,7 +30,7 @@
     <!-- css -->
     <link rel="stylesheet" href="./style.css" />
   </head>
-  <body class="bg-gray-100 w-140 h-[1189px] outfit-font mx-auto">
+  <body class="bg-gray-100 w-[450px] h-[1189px] outfit-font mx-auto">
     <!-- navbar section -->
     <div
       class="navbar bg-white flex justify-between items-center py-5 px-6 border-b-1 border-gray-200"
@@ -39,7 +39,7 @@
         <img src="./assets/Group.png" class="w-12 h-12" />
         <div class="ml-3">
           <p class="text-zinc-950/90 text-lg font-extrabold">
-            $ <span>45000</span>
+            $ <span id="available-balance">45000</span>
           </p>
           <p class="text-zinc-950/50 text-sm font-normal">Available Balance</p>
         </div>
@@ -109,13 +109,14 @@
       </div>
     </div>
     <!-- Add money -->
-    <div class="p-6">
+    <div class="p-6 ml-2">
       <p class="text-zinc-950 text-lg font-semibold">Add Money</p>
     </div>
-    <form class="p-6 mx-auto bg-white rounded-3xl w-[430px]">
+    <form class="p-6 mx-auto bg-white rounded-3xl w-[402px]">
       <p class="text-zinc-950/70 text-base font-medium mb-3">Select A Bank</p>
       <select
         class="select px-5 bg-gray-200 rounded-[32px] border-none w-full text-zinc-950 text-base font-light opacity-40 hover:bg-gray-500 hover:text-white"
+        id="add-bank-name"
       >
         <option disabled selected>Select Bank</option>
         <option>Brac Bank</option>
@@ -127,26 +128,32 @@
       </p>
       <input
         type="text"
-        id=""
+        id="add-account-number"
         placeholder="Enter 11 digit account number"
         class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
       />
       <p class="text-zinc-950/70 text-base font-medium my-3">Amount to Add</p>
       <input
         type="text"
-        id=""
+        id="add-amount"
         placeholder="Add Amount to withdraw"
         class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
       />
       <p class="text-zinc-950/70 text-base font-medium my-3">Pin Number</p>
       <input
         type="text"
-        id=""
+        id="add-pin-number"
         placeholder="Enter 4 Digit Pin"
         class="input px-5 py-6 bg-gray-100 rounded-[32px] border-none hover:bg-gray-300 hover:text-gray-900 focus:outline-none w-full"
       />
+      <button
+        id="add-money-btn"
+        class="btn w-full px-5 py-6 bg-blue-600 rounded-[32px] text-white text-xl font-semibold hover:bg-blue-950 mt-4"
+      >
+        Add Money
+      </button>
     </form>
     <!-- JS scripts -->
-    <!-- <script src="./script.js"></script> -->
+    <script src="./home.js"></script>
   </body>
 </html>
