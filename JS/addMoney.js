@@ -106,6 +106,18 @@ function handleCardToggle(id) {
       "outline-blue-600"
     );
 }
+// toggling card text feature function
+function handleCardTextToggle(id) {
+  const formText = document.getElementsByClassName("card-text");
+  for (text of formText) {
+    text.classList.remove("text-blue-600", "font-semibold");
+    text.classList.add("text-zinc-950/70", "font-normal");
+  }
+  document
+    .getElementById(id)
+    .classList.remove("text-zinc-950/70", "font-normal");
+  document.getElementById(id).classList.add("text-blue-600", "font-semibold");
+}
 
 // show add money
 document
@@ -113,12 +125,14 @@ document
   .addEventListener("click", function (e) {
     handleFormToggle("add-money-form");
     handleCardToggle("add-money-card");
+    handleCardTextToggle("add-money-text");
   });
 
 // show cashout
 document.getElementById("cashout-card").addEventListener("click", function (e) {
   handleFormToggle("cashout-form");
   handleCardToggle("cashout-card");
+  handleCardTextToggle("cashout-text");
 });
 
 // show transfer money
@@ -127,6 +141,7 @@ document
   .addEventListener("click", function (e) {
     handleFormToggle("transfer-money-form");
     handleCardToggle("transfer-money-card");
+    handleCardTextToggle("transfer-text");
   });
 
 // show get bonus
@@ -135,6 +150,7 @@ document
   .addEventListener("click", function (e) {
     handleFormToggle("get-bonus-form");
     handleCardToggle("get-bonus-card");
+    handleCardTextToggle("get-bonus-text");
   });
 
 // show pay bill
@@ -143,6 +159,7 @@ document
   .addEventListener("click", function (e) {
     handleFormToggle("pay-bill-form");
     handleCardToggle("pay-bill-card");
+    handleCardTextToggle("pay-bill-text");
   });
 
 // show transactions
@@ -151,4 +168,5 @@ document
   .addEventListener("click", function (e) {
     handleFormToggle("transactions-list");
     handleCardToggle("transactions-card");
+    handleCardTextToggle("transaction-text");
   });
