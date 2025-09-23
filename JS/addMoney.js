@@ -72,51 +72,83 @@ document.getElementById("withdraw-btn").addEventListener("click", function (e) {
   setInnerText(totalNewAvailableBalance);
 });
 
-// toggling feature function//
-function handleToggle(id) {
+// toggling form feature function//
+function handleFormToggle(id) {
   const forms = document.getElementsByClassName("form");
   for (const form of forms) {
     form.style.display = "none";
   }
   document.getElementById(id).style.display = "block";
 }
+// toggling card feature function
+function handleCardToggle(id) {
+  const formBtns = document.getElementsByClassName("card-btn");
+  for (btn of formBtns) {
+    btn.classList.remove(
+      "bg-blue-600/5",
+      "outline",
+      "outline-1",
+      "outline-offset-[-1px]",
+      "outline-blue-600"
+    );
+    btn.classList.add("bg-white", "outline-0", "outline-zinc-950/10");
+  }
+  document
+    .getElementById(id)
+    .classList.remove("bg-white", "outline-0", "outline-zinc-950/10");
+  document
+    .getElementById(id)
+    .classList.add(
+      "bg-blue-600/5",
+      "outline",
+      "outline-1",
+      "outline-offset-[-1px]",
+      "outline-blue-600"
+    );
+}
 
 // show add money
 document
   .getElementById("add-money-card")
   .addEventListener("click", function (e) {
-    handleToggle("add-money-form");
+    handleFormToggle("add-money-form");
+    handleCardToggle("add-money-card");
   });
 
 // show cashout
 document.getElementById("cashout-card").addEventListener("click", function (e) {
-  handleToggle("cashout-form");
+  handleFormToggle("cashout-form");
+  handleCardToggle("cashout-card");
 });
 
 // show transfer money
 document
   .getElementById("transfer-money-card")
   .addEventListener("click", function (e) {
-    handleToggle("transfer-money-form");
+    handleFormToggle("transfer-money-form");
+    handleCardToggle("transfer-money-card");
   });
 
 // show get bonus
 document
   .getElementById("get-bonus-card")
   .addEventListener("click", function (e) {
-    handleToggle("get-bonus-form");
+    handleFormToggle("get-bonus-form");
+    handleCardToggle("get-bonus-card");
   });
 
 // show pay bill
 document
   .getElementById("pay-bill-card")
   .addEventListener("click", function (e) {
-    handleToggle("pay-bill-form");
+    handleFormToggle("pay-bill-form");
+    handleCardToggle("pay-bill-card");
   });
 
 // show transactions
 document
   .getElementById("transactions-card")
   .addEventListener("click", function (e) {
-    handleToggle("transactions-list");
+    handleFormToggle("transactions-list");
+    handleCardToggle("transactions-card");
   });
