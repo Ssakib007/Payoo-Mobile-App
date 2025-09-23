@@ -3,8 +3,6 @@ const validAccountNumber = 12345678910;
 
 // .............. We will we starting using reusable functions herer ......//
 
-
-
 // function to get input values as integer
 function getInputValueAsNumber(id) {
   const inputFieldValueNumber = parseInt(document.getElementById(id).value);
@@ -74,66 +72,51 @@ document.getElementById("withdraw-btn").addEventListener("click", function (e) {
   setInnerText(totalNewAvailableBalance);
 });
 
-// toggling feature//
+// toggling feature function//
+function handleToggle(id) {
+  const forms = document.getElementsByClassName("form");
+  for (const form of forms) {
+    form.style.display = "none";
+  }
+  document.getElementById(id).style.display = "block";
+}
+
 // show add money
 document
   .getElementById("add-money-card")
-  .addEventListener("click", function () {
-    document.getElementById("cashout-form").style.display = "none";
-    document.getElementById("add-money-form").style.display = "block";
-    document.getElementById("transfer-money-form").style.display = "none";
-    document.getElementById("get-bonus-form").style.display = "none";
-    document.getElementById("pay-bill-form").style.display = "none";
-    document.getElementById("transactions-list").style.display = "none";
+  .addEventListener("click", function (e) {
+    handleToggle("add-money-form");
   });
+
 // show cashout
-document.getElementById("cashout-card").addEventListener("click", function () {
-  document.getElementById("add-money-form").style.display = "none";
-  document.getElementById("cashout-form").style.display = "block";
-  document.getElementById("transfer-money-form").style.display = "none";
-  document.getElementById("get-bonus-form").style.display = "none";
-  document.getElementById("pay-bill-form").style.display = "none";
-  document.getElementById("transactions-list").style.display = "none";
+document.getElementById("cashout-card").addEventListener("click", function (e) {
+  handleToggle("cashout-form");
 });
+
 // show transfer money
 document
   .getElementById("transfer-money-card")
-  .addEventListener("click", function () {
-    document.getElementById("cashout-form").style.display = "none";
-    document.getElementById("add-money-form").style.display = "none";
-    document.getElementById("transfer-money-form").style.display = "block";
-    document.getElementById("get-bonus-form").style.display = "none";
-    document.getElementById("pay-bill-form").style.display = "none";
-    document.getElementById("transactions-list").style.display = "none";
+  .addEventListener("click", function (e) {
+    handleToggle("transfer-money-form");
   });
+
 // show get bonus
 document
   .getElementById("get-bonus-card")
-  .addEventListener("click", function () {
-    document.getElementById("cashout-form").style.display = "none";
-    document.getElementById("add-money-form").style.display = "none";
-    document.getElementById("transfer-money-form").style.display = "none";
-    document.getElementById("get-bonus-form").style.display = "block";
-    document.getElementById("pay-bill-form").style.display = "none";
-    document.getElementById("transactions-list").style.display = "none";
+  .addEventListener("click", function (e) {
+    handleToggle("get-bonus-form");
   });
+
 // show pay bill
-document.getElementById("pay-bill-card").addEventListener("click", function () {
-  document.getElementById("cashout-form").style.display = "none";
-  document.getElementById("add-money-form").style.display = "none";
-  document.getElementById("transfer-money-form").style.display = "none";
-  document.getElementById("get-bonus-form").style.display = "none";
-  document.getElementById("pay-bill-form").style.display = "block";
-  document.getElementById("transactions-list").style.display = "none";
-});
+document
+  .getElementById("pay-bill-card")
+  .addEventListener("click", function (e) {
+    handleToggle("pay-bill-form");
+  });
+
 // show transactions
 document
   .getElementById("transactions-card")
-  .addEventListener("click", function () {
-    document.getElementById("cashout-form").style.display = "none";
-    document.getElementById("add-money-form").style.display = "none";
-    document.getElementById("transfer-money-form").style.display = "none";
-    document.getElementById("get-bonus-form").style.display = "none";
-    document.getElementById("pay-bill-form").style.display = "none";
-    document.getElementById("transactions-list").style.display = "block";
+  .addEventListener("click", function (e) {
+    handleToggle("transactions-list");
   });
