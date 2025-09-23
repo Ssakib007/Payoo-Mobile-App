@@ -1,47 +1,77 @@
 const validPin = 1234;
 const validAccountNumber = 12345678910;
+
+// .............. We will we starting using reusable functions herer ......//
+
+
+
+// function to get input values as integer
+function getInputValueAsNumber(id) {
+  const inputFieldValueNumber = parseInt(document.getElementById(id).value);
+  return inputFieldValueNumber;
+}
+// funciton to get input values
+function getInputValue(id) {
+  const inputFieldValue = document.getElementById(id).value;
+  return inputFieldValue;
+}
+// function to get innertexts as integer
+function getInnerTextAsInteger(id) {
+  const elementValueNumber = parseInt(document.getElementById(id).innerText);
+  return elementValueNumber;
+}
+//function to set innertexts for available balance
+function setInnerText(value) {
+  document.getElementById("available-balance").innerText = value;
+}
+
 // add money feature //
 document
   .getElementById("add-money-btn")
   .addEventListener("click", function (e) {
     e.preventDefault();
-    const accountNumber = parseInt(
-      document.getElementById("add-account-number").value
-    );
-    const amount = parseInt(document.getElementById("add-amount").value);
-    const pin = parseInt(document.getElementById("add-pin-number").value);
+
+    const accountNumber = getInputValueAsNumber("add-account-number");
+    const amount = getInputValueAsNumber("add-amount");
+    const pin = getInputValueAsNumber("add-pin-number");
+
     // validate entry
     if (accountNumber !== validAccountNumber) {
-      alert("Incorrect account number or pin. Please try again.");
+      alert("Incorrect account number. Please try again.");
       return;
     }
 
     if (pin !== validPin) {
-      alert("Incorrect account number or pin. Please try again.");
+      alert("Incorrect pin. Please try again.");
       return;
     }
     //balance updating
-    const availableBalance = parseInt(
-      document.getElementById("available-balance").innerText
-    );
+    const availableBalance = getInnerTextAsInteger("available-balance");
     const totalNewAvailableBalance = amount + availableBalance;
-    document.getElementById("available-balance").innerText =
-      totalNewAvailableBalance;
+    setInnerText(totalNewAvailableBalance);
   });
 
-// cashout feature 
+// cashout feature
 document.getElementById("withdraw-btn").addEventListener("click", function (e) {
   e.preventDefault();
 
-  const amount = parseInt(document.getElementById("withdraw-amount").value);
+  const amount = getInputValueAsNumber("withdraw-amount");
+  const agentNumber = getInputValue("agent-number");
+  const pin = getInputValueAsNumber("cashout-pin");
+
   // validate entry
-  
-  const availableBalance = parseInt(
-    document.getElementById("available-balance").innerText
-  );
+  if (pin !== validPin) {
+    alert("Incorrect pin. Please try again.");
+    return;
+  }
+  if (agentNumber.length !== 11) {
+    alert("Incorrect agent number. Please try again");
+    return;
+  }
+  // balance updating
+  const availableBalance = getInnerTextAsInteger("available-balance");
   const totalNewAvailableBalance = availableBalance - amount;
-  document.getElementById("available-balance").innerText =
-    totalNewAvailableBalance;
+  setInnerText(totalNewAvailableBalance);
 });
 
 // toggling feature//
