@@ -140,7 +140,7 @@
     <!-- all form section -->
     <div class="all-form-section">
       <!-- Add money -->
-      <div id="add-money-form" class="form">
+      <div id="add-money-form" class="form hidden">
         <div class="p-6 ml-2">
           <p class="text-zinc-950 text-lg font-semibold">Add Money</p>
         </div>
@@ -340,10 +340,12 @@
         </form>
       </div>
       <!-- transactions -->
-      <div id="transactions-list" class="form hidden">
-        <div class="p-6 ml-2">
+      <div id="transactions-list" class="form">
+        <div class="px-6 pt-6 pb-2 ml-2 flex justify-between items-center">
           <p class="text-zinc-950 text-lg font-semibold">Transaction History</p>
+          <p class="text-zinc-950/50 text-sm font-normal">View All</p>
         </div>
+        <div id="transaction-container" class="flex flex-col gap-3"></div>
       </div>
     </div>
 

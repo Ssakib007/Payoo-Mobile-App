@@ -1,7 +1,8 @@
 const validPin = 1234;
 const validAccountNumber = 12345678910;
+const transactionData = [];
 
-// .............. We will we starting using reusable functions herer ......//
+// .............. We will using reusable functions here ......//
 
 // function to get input values as integer
 function getInputValueAsNumber(id) {
@@ -47,6 +48,12 @@ document
     const availableBalance = getInnerTextAsInteger("available-balance");
     const totalNewAvailableBalance = amount + availableBalance;
     setInnerText(totalNewAvailableBalance);
+
+    const data = {
+      name: "Add Money",
+      date: new Date().toLocaleTimeString(),
+    };
+    transactionData.push(data);
   });
 
 // cashout feature
@@ -70,7 +77,42 @@ document.getElementById("withdraw-btn").addEventListener("click", function (e) {
   const availableBalance = getInnerTextAsInteger("available-balance");
   const totalNewAvailableBalance = availableBalance - amount;
   setInnerText(totalNewAvailableBalance);
+  const data = {
+    name: "Cash Out",
+    date: new Date().toLocaleTimeString(),
+  };
+  transactionData.push(data);
 });
+
+// transactions
+document
+  .getElementById("transactions-card")
+  .addEventListener("click", function () {
+    const transactionContainer = document.getElementById(
+      "transaction-container"
+    );
+    transactionContainer.innerText = "";
+    for (const data of transactionData) {
+      const div = document.createElement("div");
+      div.innerHTML = `<div
+          class="flex justify-between items-center px-4 py-3 bg-white rounded-xl outline outline-1 outline-offset-[-1px] outline-zinc-950/10 mx-6"
+        >
+          <div class="flex gap-3 items-center">
+            <div class="p-3 rounded-full bg-gray-100">
+              <img src="assets/wallet1.png" />
+            </div>
+            <div>
+              <p class="text-zinc-950/70 text-base font-semibold">
+                ${data.name}
+              </p>
+              <p class="text-zinc-950/70 text-xs font-normal">${data.date}</p>
+            </div>
+          </div>
+          <div><i class="fa-solid fa-ellipsis-vertical"></i></div>
+        </div>`;
+      transactionContainer.appendChild(div);
+    }
+  });
 
 // toggling form feature function//
 function handleFormToggle(id) {
